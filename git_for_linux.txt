@@ -1,0 +1,69 @@
+Debian / Ubuntu (apt-get)
+Git packages are available via apt:
+
+From your shell, install Git using apt-get:
+
+$ sudo apt-get update
+$ sudo apt-get install git
+Verify the installation was successful by typing git --version:
+
+$ git --version
+git version 2.9.2
+Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create:
+
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@atlassian.com"
+Fedora (dnf/yum)
+Git packages are available via both yum and dnf:
+
+From your shell, install Git using dnf (or yum, on older versions of Fedora):
+
+$ sudo dnf install git
+or
+
+$ sudo yum install git
+Verify the installation was successful by typing git --version:
+
+$ git --version
+git version 2.9.2
+Configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create
+
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@atlassian.com"
+Build Git from source on Linux
+Debian / Ubuntu
+
+Git requires the several dependencies to build on Linux. These are available via apt:
+
+From your shell, install the necessary dependencies using apt-get:
+
+$ sudo apt-get update
+$ sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x
+Clone the Git source (or if you don't yet have a version of Git installed, download and extract it):
+
+$ git clone https://git.kernel.org/pub/scm/git/git.git
+To build Git and install it under /usr, run make:
+
+$ make all doc info prefix=/usr
+$ sudo make install install-doc install-html install-info install-man prefix=/usr
+Fedora
+
+Git requires the several dependencies to build on Linux. These are available via both yum and dnf:
+
+From your shell, install the necessary build dependencies using dnf (or yum, on older versions of Fedora):
+
+$ sudo dnf install curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel asciidoc xmlto docbook2X
+or using yum. For yum, you may need to install the Extra Packages for Enterprise Linux (EPEL) repository first:
+
+$ sudo yum install epel-release
+$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel asciidoc xmlto docbook2X
+Symlink docbook2X to the filename that the Git build expects:
+
+$ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+Clone the Git source (or if you don't yet have a version of Git installed, download and extract it):
+
+$ git clone https://git.kernel.org/pub/scm/git/git.git
+To build Git and install it under /usr, run make:
+
+$ make all doc prefix=/usr
+$ sudo make install install-doc install-html install-man prefix=/usr
