@@ -1,0 +1,12 @@
+Saltar error ssl de git bash
+
+-- error:
+
+Cloning into 'install_docker'...
+fatal: protocol 'https' is not supported
+
+
+--aplicar cambio
+git config --global http.sslVerify false
+
+-- cerrar y volver a abri git bash
