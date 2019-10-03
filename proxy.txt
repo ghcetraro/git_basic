@@ -1,0 +1,11 @@
+-- Configurar proxy
+
+git config --global http.proxy http://10.214.130.110:80
+
+-- Borrar configuracion de proxy
+
+git config --global --unset http.proxy 
+
+-- Ver si se configuro el proxy
+
+git config --list
